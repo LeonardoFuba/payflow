@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:payflow/shared/themes/app_colors.dart';
 import 'app_widget.dart';
 
 void main() {
@@ -33,11 +34,7 @@ class _AppFirebaseState extends State<AppFirebase> {
         } else if (snapshot.connectionState == ConnectionState.done) {
           return AppWidget();
         } else {
-          return Material(
-            child: Center(
-              child: CircularProgressIndicator(),
-            ),
-          );
+          return Material(child: Container(color: AppColors.background));
         }
       },
     );
